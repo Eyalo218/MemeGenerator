@@ -27,13 +27,17 @@
         </div>
         <div class="meme-container">
             <img src="img/003.jpg" onclick="openEditor()" alt="" />
-            <img src="img/004.jpg" alt="" />
-            <img src="img/004.jpg" alt="" />
-            <img src="img/004.jpg" alt="" />
-            <img src="img/004.jpg" alt="" />
-            <img src="img/004.jpg" alt="" />
-            <img src="img/004.jpg" alt="" />
-            <img src="img/004.jpg" alt="" />
+            <img src="img/004.jpg" onclick="openEditor()" alt="" />
+            <img src="img/005.jpg" onclick="openEditor()" alt="" />
+            <img src="img/006.jpg" onclick="openEditor()" alt="" />
+            <img src="img/12.jpg" onclick="openEditor()" alt="" />
+            <img src="img/19.jpg" onclick="openEditor()" alt="" />
+            <img src="img/2.jpg" onclick="openEditor()" alt="" />
+            <img src="img/5.jpg" onclick="openEditor()" alt="" />
+            <img src="img/8.jpg" onclick="openEditor()" alt="" />
+            <img src="img/9.jpg" onclick="openEditor()" alt="" />
+            <img src="img/img11.jpg" onclick="openEditor()" alt="" />
+            <img src="img/img12.jpg" onclick="openEditor()" alt="" />
         </div>
         <div>
             <ul class="tags clean-list flex">
@@ -63,11 +67,33 @@
         </div>
     </main>
 
-    <editor class="hidden">
-        <button onclick="closeEditor()"></button>
+    <editor class="editor hidden flex">
+
+
+        <div class="back-to flex" onclick="closeEditor()">
+            <div class="arrow">&#8656</div>
+            <div class="back-text">Back to Gallery</div>
+        </div>
+        <div class="canvas-container">
+            <canvas id="canvas" src="img/img11"></canvas>
+        </div>
+        <div class="editing options flex">
+            <input type="text" placeholder="Enter your meme..." class="editing text-insertion"></input>
+            <div class="editing buttons flex">
+                <button>A</button>
+                <button>B</button>
+                <button>C</button>
+                <button>D</button>
+                <button>E</button>
+            </div>
+            <div class="editing more">More</div>
+        </div>
+        <div class="download flex" onclick="downloadMeme()">
+                <div class="arrow">&#8656</div>
+                <div class="download-text">Download</div>
+            </div>
 
     </editor>
-
 
     <script src="js/main.js"></script>
 </body>

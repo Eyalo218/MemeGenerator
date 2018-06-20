@@ -14,7 +14,7 @@ body{
 header {
     width: 100%;
     height: 63px;
-    background-color: #323232;
+    background-color: #222;
     justify-content: space-between;
     
 
@@ -59,4 +59,64 @@ img{
 
 .hidden {
     display:none;
+}
+
+.back-to {
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.back-text, .download-text {
+    width: 90%;
+    margin: 0;
+    height: 50px;
+    line-height: 50px;
+    background-color: #2da;
+    text-align: center;
+}
+
+.arrow {
+    line-height: 50px;
+    text-align: center;
+    width: 10%;
+    background-color: orange;
+}
+
+.canvas-container {
+    border: 1px black solid;
+    width: 100%;
+    height: 400px;
+    background-color: #555;
+    margin-bottom: 20px;
+}
+
+.editor.flex {
+    flex-direction: column;
+    padding: 20px;
+    background-color: #555;
+}
+
+.editing.options {
+    background-color: #999;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+.editing input {
+    width: 100%;
+}
+
+.editing .buttons {
+    width: 100%;
+}
+
+.editing button {
+    height: 30px;
+    width: 20%;
+}
+
+.download.flex {
 }
