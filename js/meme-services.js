@@ -55,4 +55,3 @@ function getImageById(id){
     return null;
 }
 
-    
