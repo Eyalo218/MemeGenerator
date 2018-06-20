@@ -85,9 +85,10 @@ img{
 .canvas-container {
     border: 1px black solid;
     width: 100%;
-    height: 400px;
     background-color: #555;
     margin-bottom: 20px;
+    justify-content: center;
+    align-content: center;
 }
 
 #canvas {
