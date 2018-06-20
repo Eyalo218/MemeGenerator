@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
 
-<body>
+<body onload="renderGallery()">
     <header class="flex">
         <h1 class="logo">Meme generator</h1>
         <button onclick="toggleMenu()">☰</button>
@@ -26,14 +26,6 @@
             <input type="text" name="" id="" placeholder="Tags">
         </div>
         <div class="meme-container">
-            <img src="img/003.jpg" onclick="openEditor()" alt="" />
-            <img src="img/004.jpg" alt="" />
-            <img src="img/004.jpg" alt="" />
-            <img src="img/004.jpg" alt="" />
-            <img src="img/004.jpg" alt="" />
-            <img src="img/004.jpg" alt="" />
-            <img src="img/004.jpg" alt="" />
-            <img src="img/004.jpg" alt="" />
         </div>
         <div>
             <ul class="tags clean-list flex">
@@ -64,11 +56,13 @@
     </main>
 
     <editor class="hidden">
-        <button onclick="closeEditor()"></button>
-
+        <div>
+            <button onclick="closeEditor()"></button>
+        </div>
     </editor>
 
-
+    
+    <script src="js/meme-services.js"></script>
     <script src="js/main.js"></script>
 </body>
 
