@@ -90,6 +90,10 @@ img{
     margin-bottom: 20px;
 }
 
+#canvas {
+    background-repeat: no-repeat;
+}
+
 .editor.flex {
     flex-direction: column;
     padding: 20px;

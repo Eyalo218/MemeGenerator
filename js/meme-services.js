@@ -1,3 +1,5 @@
+'use strict'
+
 var gImgs = [
     { id: 1, url: 'img/2.jpg', keywords: ['happy'] },
     { id: 2, url: 'img/003.jpg', keywords: ['happy'] },
@@ -46,3 +48,11 @@ function setImagesForRendering() {
 
 }
 
+function getImageById(id){
+    for (let i=0; i<gImgs.length; i++){
+        if (gImgs[i].id === id) return gImgs[i];
+    }
+    return null;
+}
+
+    
