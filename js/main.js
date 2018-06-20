@@ -8,6 +8,7 @@ function openEditor(photo){
 
     
 }
+
 function closeEditor(){
     var elMain = document.querySelector('main');
     var elEditor = document.querySelector('editor');
@@ -15,3 +16,10 @@ function closeEditor(){
     elEditor.classList.toggle('hidden');
     
 }
+
+function renderGallery(){
+    var elGallery = document.querySelector('.meme-container');
+    elGallery.innerHTML = setImagesForRendering();
+}
+
+
