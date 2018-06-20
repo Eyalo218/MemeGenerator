@@ -22,10 +22,10 @@ var gImgs = [
     { id: 19, url: 'img/leo.jpg', keywords: ['happy'] },
     { id: 20, url: 'img/meme1.jpg', keywords: ['happy'] },
     { id: 21, url: 'img/One-Does-Not-Simply.jpg', keywords: ['happy'] },
-    { id: 21, url: 'img/Oprah-You-Get-A.jpg', keywords: ['happy'] },
-    { id: 21, url: 'img/patrick.jpg', keywords: ['happy'] },
-    { id: 21, url: 'img/putin.jpg', keywords: ['happy'] },
-    { id: 21, url: 'img/X-Everywhere.jpg', keywords: ['happy'] }
+    { id: 22, url: 'img/Oprah-You-Get-A.jpg', keywords: ['happy'] },
+    { id: 23, url: 'img/patrick.jpg', keywords: ['happy'] },
+    { id: 24, url: 'img/putin.jpg', keywords: ['happy'] },
+    { id: 25, url: 'img/X-Everywhere.jpg', keywords: ['happy'] }
 ];
 
 var gMeme = {
