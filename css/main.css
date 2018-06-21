@@ -15,7 +15,7 @@ body{
 
 header {
     width: 100%;
-    height: 63px;
+    height: 8%;
     background-color: #222;
     justify-content: space-around;
     align-items: center;
@@ -146,23 +146,26 @@ img.portrait{
 }
 
 .back-to {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     justify-content: space-between;
-    height: 50px;
+    height: 60px;
     /* height: 80px; */
 }
 
 .back-text, .download-text {
     width: 90%;
     margin: 0;
-    height: 50px;
+    height: 60px;
     /* line-height: 50px; */
     background-color: #2da;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .arrow {
-    /* height: 60px; */
+    height: 60px;
     line-height: 50px;
     text-align: center;
     width: 10%;
@@ -180,6 +183,7 @@ img.portrait{
 }
 
 #canvas {
+    margin-top: 20px;
     border: 1px black solid;
 }
 
@@ -192,9 +196,8 @@ img.portrait{
     flex-direction: column;
     padding: 20px;
     background-color: #555;
-    /* height: 100%; */
+    min-height: 92%;
     justify-content: space-between;
-
 }
 
 .editing.options {
@@ -222,3 +225,6 @@ img.portrait{
     width: 20%;
 }
 
+.download.flex {
+    height: 50px;
+}
