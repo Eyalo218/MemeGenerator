@@ -19,6 +19,10 @@ header {
     align-items: center;
 }
 
+header h1{
+    color: rgb(168, 156, 156);
+}
+
 header button{
     background-color: #222;
     border:solid 1px rgb(168, 156, 156);
@@ -59,18 +63,50 @@ img.portrait{
 
 /*  classes */
 
+.menu-hidden{
+    
+    transform: translate(100%, 0);
+    
+}
 
-.nav{
-    display:none;
+
+.menu {
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #222;
+    border-left: 1px solid rgba(102, 102, 102, 0.5);
+    border-right:none;
+    min-width: 250px;
+    transform: translate(0, 62px);
+    transition: all .8s;
+    align-items:center;
+    justify-content: space-evenly;
+    color: rgb(168, 156, 156);
+
+}
+
+.menu li{
+    width: 122px;
+    height: 34px;
+    font-size: 23px;
+    text-transform: capitalize;
+}
+
+.search-box{
+    justify-content: center;
+    margin-top:20px;
 }
 
 .meme-container{
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;    
 }
 
 .meme-container img{
-    margin:10px 0;
+    margin:6px 6px;
 }
 
 .tags{

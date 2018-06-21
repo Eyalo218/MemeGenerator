@@ -48,3 +48,15 @@ function renderEditingCanvas(id) {
     ctx.fillText('I\'ll Be Back...', canvas.width / 2 - 3, canvas.height * 0.85 - 4);
   }
 }
+
+function toggleMenu(ev) {
+  ev.stopPropagation();
+  var elMenu = document.querySelector('.menu');
+  elMenu.classList.toggle('hidden');
+}
+
+
+function renderByTag(elText){
+  var elGallery = document.querySelector(".meme-container");
+  elGallery.innerHTML = setImagesForSorting(elText.value);
+}

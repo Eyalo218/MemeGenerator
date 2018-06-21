@@ -3,7 +3,7 @@
 var gImgs = [
     { id: 1, url: 'img/2.jpg', keywords: ['happy'] },
     { id: 2, url: 'img/003.jpg', keywords: ['happy'] },
-    { id: 3, url: 'img/004.jpg', keywords: ['happy'] },
+    { id: 3, url: 'img/004.jpg', keywords: ['happy', 'angry'] },
     { id: 4, url: 'img/005.jpg', keywords: ['happy'] },
     { id: 5, url: 'img/5.jpg', keywords: ['happy'] },
     { id: 6, url: 'img/006.jpg', keywords: ['happy'] },
@@ -48,10 +48,23 @@ function setImagesForRendering() {
 
 }
 
-function getImageById(id){
-    for (let i=0; i<gImgs.length; i++){
+function getImageById(id) {
+    for (let i = 0; i < gImgs.length; i++) {
         if (gImgs[i].id === id) return gImgs[i];
     }
     return null;
 }
 
+function setImagesForSorting(sortBy) {
+    var strHTML = '';
+    for (let i = 0; i < gImgs.length; i++) {
+        var currImg = gImgs[i];
+        for (let j = 0; j < currImg.keywords.length; j++) {
+            if (currImg.keywords[j].indexOf(sortBy) !== -1) {
+                strHTML += `<img id="${currImg.id}" src="${currImg.url}" onclick="togglePages(${currImg.id})"/>`
+                break;
+            }
+        }
+    }
+    return strHTML;
+}
