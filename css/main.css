@@ -107,8 +107,14 @@ img.portrait{
     flex-wrap: wrap;    
 }
 
-.meme-container img{
+.meme-container div{
     margin:6px 6px;
+    height: 200px;
+    width:200px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: 50% 50%;
+
 }
 
 .tags{

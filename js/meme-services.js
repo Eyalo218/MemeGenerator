@@ -1,5 +1,5 @@
 'use strict'
-
+var gKeyWords = []
 var gImgs = [
     { id: 1, url: 'img/2.jpg', keywords: ['happy','look at all'] },
     { id: 2, url: 'img/003.jpg', keywords: ['stupid'] },
@@ -32,8 +32,7 @@ var gImgs = [
     { id: 29, url: 'img/ca05.jpg', keywords: ['happy'] },
     { id: 30, url: 'img/ca06.jpg', keywords: ['happy'] },
     { id: 31, url: 'img/ca07.jpg', keywords: ['happy'] },
-    { id: 32, url: 'img/ca01.jpg', keywords: ['happy'] },
-    { id: 33, url: 'img/putin.jpg', keywords: ['happy'] }
+    { id: 32, url: 'img/ca01.jpg', keywords: ['happy'] }
 ];
 
 var gMeme = {
@@ -47,11 +46,12 @@ var gMeme = {
 
 function setImagesForRendering() {
 
-    //i need to add the sorting render .. will do it later
     var strHTML = '';
     for (let i = 0; i < gImgs.length; i++) {
         let img = gImgs[i];
-        strHTML += `<img id="${img.id}" src="${img.url}" onclick="togglePages(${img.id})"/>`
+        // strHTML += `<img id="${img.id}" src="${img.url}" onclick="togglePages(${img.id})"/>`
+        strHTML += `<div id="${img.id}" data-src="${img.url}" onclick="togglePages(${img.id})" 
+        style="background-image:url(${img.url})"''/></div>`
     }
     return strHTML;
 
@@ -80,4 +80,17 @@ function setImagesForSorting(sortBy) {
 
 function getCurrMeme(){
     return gMeme;
+}
+
+
+function getKeyWords(){
+    console.log('llala');
+    for (let i = 0; i < gImgs.length; i++) {
+        let currImg = gImgs[i];
+        for (let j = 0; j < currImg.keywords; j++) {
+            console.log(currImg.keywords[j]);
+            if (gKeyWords.indexOf(currImg.keywords[j] ===-1))
+                gKeyWords.push(currImg.keywords[j]); 
+        }    
+    }
 }

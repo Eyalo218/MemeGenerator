@@ -64,3 +64,13 @@ function renderByTag(elText) {
   var elGallery = document.querySelector(".meme-container");
   elGallery.innerHTML = setImagesForSorting(elText.value);
 }
+
+
+
+function sortBy(elListItem){
+  let size = elListItem.style.fontSize
+  if (size === '') size='large';
+  else if (size === 'large') size='x-large';
+  else if (size === 'x-large') size='xx-large';
+  elListItem.style.fontSize = size;
+}
