@@ -20,9 +20,15 @@ function renderText() {
   var currMeme = getCurrMeme();
   for (let i = 0; i < currMeme.txts.length; i++) {
     var txt = currMeme.txts[i];
-    ctx.font = txt.fontSize + 'px ' + txt.fontFamily;
-    ctx.fillStyle = txt.color;
+    ctx.font = txt.fontSize + "px " + txt.fontFamily;
     ctx.textAlign = txt.alignHor;
+    ctx.fillStyle = "black";
+    ctx.fillText(
+      txt.line,
+      canvas.width / 2 + 3,
+      canvas.height * txt.posVert + 3
+    );
+    ctx.fillStyle = txt.color;
     ctx.fillText(txt.line, canvas.width / 2, canvas.height * txt.posVert);
   }
 }
@@ -34,9 +40,9 @@ function renderEditingCanvas(id) {
   var elCanvasContainer = document.querySelector(".canvas-container");
   var ctx = elCanvas.getContext("2d");
 
-  img.onload = function () {
+  img.onload = function() {
     var aspect = img.width / img.height;
-    elCanvas.width = elCanvasContainer.offsetWidth - 4;
+    elCanvas.width = elCanvasContainer.clientWidth;
     elCanvas.height = elCanvas.width / aspect;
     elCanvasContainer.height = elCanvas.height + 4;
     ctx.drawImage(img, 0, 0, elCanvas.width, elCanvas.height);
@@ -46,10 +52,9 @@ function renderEditingCanvas(id) {
 
 function toggleMenu(ev) {
   ev.stopPropagation();
-  var elMenu = document.querySelector('.menu');
-  elMenu.classList.toggle('hidden');
+  var elMenu = document.querySelector(".menu");
+  elMenu.classList.toggle("hidden");
 }
-
 
 function renderByTag(elText) {
   var elGallery = document.querySelector(".meme-container");
