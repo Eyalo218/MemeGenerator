@@ -211,7 +211,7 @@ img.portrait{
     height: 200px;
 }
 
-.editing input {
+.editing text-insertion {
     width: 100%;
 }
 
@@ -227,4 +227,16 @@ img.portrait{
 
 .download.flex {
     height: 50px;
+}
+
+.editing button {
+    width: 20%;
+    background: linear-gradient(#222, #555, #333);
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+.input-color  {
+    width: 20%;
 }
