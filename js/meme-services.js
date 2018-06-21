@@ -42,7 +42,7 @@ function setImagesForRendering() {
     var strHTML = '';
     for (let i = 0; i < gImgs.length; i++) {
         let img = gImgs[i];
-        strHTML += `<img id="${img.id}" src="${img.url}" onclick="openEditor(${img.id})"/>`
+        strHTML += `<img id="${img.id}" src="${img.url}" onclick="togglePages(${img.id})"/>`
     }
     return strHTML;
 

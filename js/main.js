@@ -1,57 +1,77 @@
 'use strict'
 
-function openEditor(photoId) {
-    var elMain = document.querySelector('main');
-    var elEditor = document.querySelector('editor');
-    elMain.classList.toggle('hidden');
-    elEditor.classList.toggle('hidden');
-    renderEditingCanvas(photoId);
+
+function renderEditingCanvas(id) {
+  var elCanvasContainer = document.querySelector('.canvas-container');
+  var img = new Image();
+  img.src = getImageById(id).url;
+  img.onload = function () {
+    var elCanvas = document.getElementById('canvas');
+    elCanvas.width = elCanvasContainer.offsetWidth;
+    elCanvas.height = elCanvasContainer.offsetHeight;
+    var ctx = elCanvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, elCanvas.width - 2, elCanvas.height - 2);
+  }
+
+  // test text - need to resolve later
+  // ctx.font = '48px impact';
+  // ctx.fillStyle = '#7f0f0f';
+  // ctx.textAlign = 'center';
+  // ctx.fillText('Hello world...', canvas.width / 2, canvas.height * 0.2);
+  // ctx.fillText('I\'ll Be Back...', canvas.width / 2, canvas.height * 0.85);
+
+  // ctx.fillStyle = 'yellow';
+  // ctx.fillText('Hello world...', elCanvas.width / 2 - 3, elCanvas.height * 0.2 - 4);
+  // ctx.fillText('I\'ll Be Back...', elCanvas.width / 2 - 3, elCanvas.height * 0.85 - 4);
 }
 
-function closeEditor() {
-    var elMain = document.querySelector('main');
-    var elEditor = document.querySelector('editor');
-    elMain.classList.toggle('hidden');
-    elEditor.classList.toggle('hidden');
+
+function togglePages(photoId) {
+  var elMain = document.querySelector("main");
+  var elEditor = document.querySelector("editor");
+  elMain.classList.toggle("hidden");
+  elEditor.classList.toggle("hidden");
+  if (photoId!==undefined) renderEditingCanvas(photoId);
 }
+
+
 
 function renderGallery() {
-    var elGallery = document.querySelector('.meme-container');
-    elGallery.innerHTML = setImagesForRendering();
+  var elGallery = document.querySelector(".meme-container");
+  elGallery.innerHTML = setImagesForRendering();
 }
 
-var gsizetest;
-function renderEditingCanvas(id) {
-    var elCanvasContainer = document.querySelector('.canvas-container');
-    var img = document.createElement('img');
-    img.src = getImageById(id).url;
-    img.onload = function() {
-        var elCanvas = document.getElementById('canvas');
-        elCanvas.width = elCanvasContainer.offsetWidth;
-        elCanvas.height = elCanvasContainer.offsetHeight;
-        gsizetest = elCanvasContainer;
-        var ctx = elCanvas.getContext('2d');
-        ctx.drawImage(img, 0, 0, elCanvas.width-2, elCanvas.height-2);
-    }
-    // var img = new Image ();
-    // img.src = getImageById(id).url;
-    // console.log('img.src=',img.src);
-    // var elCanvas = document.querySelector('#canvas');
-    // var elCanvasContainer = document.querySelector('.canvas-container');
-    // var ctx = elCanvas.getContext('2d');
-    // // img.onload = function () {
-    //     console.log('canvas container = ', elCanvasContainer.offsetWidth);
+//need to add the text rendering seperatly.
 
-    //     elCanvas.width = elCanvasContainer.offsetWidth;
-    //     elCanvas.height = img.height;
-    //     // ctx.drawImage(img, 0, 0,elCanvas.width, elCanvas.height);
-    //     var pat=ctx.createPattern(img,'no-repeat');
-    //     ctx.rect(0,0,elCanvas.width,elCanvas.height);
-    //     ctx.fillStyle=pat;
-    //     ctx.fill();
+function renderText(){}
 
-    // ctx.scale(2);
-    // }
-    // ctx.drawImage(img,0,0);
-}
+// function renderEditingCanvas(id) {
+//   var img = new Image();
+//   img.src = getImageById(id).url;
+//   console.log("img.src=", img.src);
+//   var elCanvas = document.querySelector("#canvas");
+//   var elCanvasContainer = document.querySelector(".canvas-container");
+//   var ctx = elCanvas.getContext("2d");
+//   img.onload = function () {
+//     if (img.width > window.innerWidth - 60) {
+//       var oversized = img.width / (window.innerWidth - 60);
+//       img.height = img.height / oversized;
+//       img.width = img.width / oversized;
+//     }
 
+//     elCanvas.height = img.height;
+//     elCanvas.width = img.width;
+//     var startPointX = (elCanvasContainer.offsetWidth - img.width) / 2;
+//     var startPointY = (elCanvas.height - img.height) / 2;
+//     ctx.drawImage(img, 0, 0);
+//     ctx.font = '48px impact';
+//     ctx.fillStyle = '#7f0f0f';
+//     ctx.textAlign = 'center';
+//     ctx.fillText('Hello world...', canvas.width / 2, canvas.height * 0.2);
+//     ctx.fillText('I\'ll Be Back...', canvas.width / 2, canvas.height * 0.85);
+
+//     ctx.fillStyle = 'yellow';
+//     ctx.fillText('Hello world...', canvas.width / 2 - 3, canvas.height * 0.2 - 4);
+//     ctx.fillText('I\'ll Be Back...', canvas.width / 2 - 3, canvas.height * 0.85 - 4);
+//   }
+// }

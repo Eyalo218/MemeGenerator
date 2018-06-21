@@ -34,6 +34,7 @@ img{
 }
 
 img.portrait{
+    align-self:center;
     width: 100px;
     height: 100px;
 }
@@ -63,15 +64,34 @@ img.portrait{
     display:none;
 }
 
+.meme-container{
+    justify-content: space-evenly;
+    flex-wrap: wrap;    
+}
+
+.meme-container img{
+    margin:10px 0;
+}
+
 .tags{
     justify-content: space-between;
+    align-items:center;
     background-color: orange;
+    height: 150px;/*temp need to make it pixel perfect*/
+}
+
+.tags li{
+    align-self:center;
 }
 
 .about{
     justify-content: center;
     align-content: center;
     background-color: aquamarine;
+    height: 350px; /*temp need to make it pixel perfect*/
+}
+.about-text{
+    align-self:center;
 }
 
 .contact{
@@ -107,14 +127,14 @@ img.portrait{
 .canvas-container {
     border: 1px black solid;
     width: 100%;
-    height: 400px;
+    height:300px;
     background-color: #555;
     margin-bottom: 20px;
+    justify-content: center;
+    align-content: center;
 }
 
-#canvas {
-    background-repeat: no-repeat;
-}
+
 
 .editor.flex {
     flex-direction: column;
