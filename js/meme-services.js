@@ -31,7 +31,8 @@ var gImgs = [
 var gMeme = {
     selectedImgId: 5,
     txts: [
-        { line: 'I never eat Falafel', size: 20, align: 'left', color: 'red' }
+        { line: 'I never eat Falafel', fontFamily: 'impact', fontSize: 40, alignHor: 'center', posVert: 0.13, color: 'red' },
+        { line: 'But Im Hungry', fontFamily: 'arial', fontSize: 50, alignHor: 'center', posVert: 0.9, color: 'yellow' }
     ]
 }
 
@@ -67,4 +68,8 @@ function setImagesForSorting(sortBy) {
         }
     }
     return strHTML;
+}
+
+function getCurrMeme(){
+    return gMeme;
 }
