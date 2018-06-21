@@ -148,18 +148,21 @@ img.portrait{
 .back-to {
     margin-bottom: 20px;
     justify-content: space-between;
+    height: 50px;
+    /* height: 80px; */
 }
 
 .back-text, .download-text {
     width: 90%;
     margin: 0;
     height: 50px;
-    line-height: 50px;
+    /* line-height: 50px; */
     background-color: #2da;
     text-align: center;
 }
 
 .arrow {
+    /* height: 60px; */
     line-height: 50px;
     text-align: center;
     width: 10%;

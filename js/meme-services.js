@@ -25,7 +25,13 @@ var gImgs = [
     { id: 22, url: 'img/Oprah-You-Get-A.jpg', keywords: ['happy'] },
     { id: 23, url: 'img/patrick.jpg', keywords: ['happy'] },
     { id: 24, url: 'img/putin.jpg', keywords: ['happy'] },
-    { id: 25, url: 'img/X-Everywhere.jpg', keywords: ['happy'] }
+    { id: 25, url: 'img/ca01.jpg', keywords: ['happy'] },
+    { id: 26, url: 'img/ca02.jpg', keywords: ['happy'] },
+    { id: 27, url: 'img/ca03.jpg', keywords: ['happy'] },
+    { id: 28, url: 'img/ca04.jpg', keywords: ['happy'] },
+    { id: 29, url: 'img/ca05.jpg', keywords: ['happy'] },
+    { id: 30, url: 'img/ca06.jpg', keywords: ['happy'] },
+    { id: 31, url: 'img/ca07.jpg', keywords: ['happy'] }
 ];
 
 var gMeme = {

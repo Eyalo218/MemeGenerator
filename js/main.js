@@ -19,6 +19,8 @@ function renderText() {
 
   var currMeme = getCurrMeme();
   for (let i = 0; i < currMeme.txts.length; i++) {
+    console.log(txt.line);
+    
     var txt = currMeme.txts[i];
     ctx.font = txt.fontSize + "px " + txt.fontFamily;
     ctx.textAlign = txt.alignHor;
@@ -42,17 +44,13 @@ function renderEditingCanvas(id) {
 
   img.onload = function() {
     var aspect = img.width / img.height;
-    elCanvas.width = elCanvasContainer.offsetWidth - 4;
+    elCanvas.width = elCanvasContainer.clientWidth;
     elCanvas.height = elCanvas.width / aspect;
-    // elCanvasContainer.height = elCanvas.height + 4;
+    elCanvasContainer.height = elCanvas.height + 4;
     ctx.drawImage(img, 0, 0, elCanvas.width, elCanvas.height);
-
-    // document.querySelector('.editor .flex').style = 'height: 666px';
-    console.log(window.innerHeight);
-    var elEditor = document.querySelector(".editor");
-    elEditor.style.height = `calc(100vh - 63px)`;
-    // height: 100vh - 63px;
   };
+
+  renderText();
 }
 
 function toggleMenu(ev) {
