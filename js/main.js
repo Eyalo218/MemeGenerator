@@ -50,6 +50,14 @@ function renderEditingCanvas(id) {
     // height: 100vh - 63px;
 
 
-    renderText();
-  };
+function toggleMenu(ev) {
+  ev.stopPropagation();
+  var elMenu = document.querySelector('.menu');
+  elMenu.classList.toggle('hidden');
+}
+
+
+function renderByTag(elText) {
+  var elGallery = document.querySelector(".meme-container");
+  elGallery.innerHTML = setImagesForSorting(elText.value);
 }

@@ -12,18 +12,18 @@
 <body onload="renderGallery()">
     <header class="flex">
         <h1 class="logo">Meme generator</h1>
-        <button onclick="toggleMenu()" class="menu">☰</button>
-        <ul class="nav clean-list flex">
+        <button onclick="toggleMenu(event)" class="menu-toggle">☰</button>
+        <ul class="menu-hidden clean-list flex column menu">
             <li>portfolio</li>
             <li>about</li>
-            <li>Img</li>
+            <li class="hidden">Img</li>
             <li>blog</li>
             <li>get in touch</li>
         </ul>
     </header>
     <main>
-        <div class="search-box">
-            <input type="text" name="" id="" placeholder="Tags">
+        <div class="search-box flex">
+            <input onkeyup="renderByTag(this)" type="text" name="" id="" placeholder="Tags">
         </div>
         <div class="meme-container flex">
         </div>
