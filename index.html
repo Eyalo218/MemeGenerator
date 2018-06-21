@@ -12,7 +12,7 @@
 <body onload="renderGallery()">
     <header class="flex">
         <h1 class="logo">Meme generator</h1>
-        <button onclick="toggleMenu()">☰</button>
+        <button onclick="toggleMenu()" class="menu">☰</button>
         <ul class="nav clean-list flex">
             <li>portfolio</li>
             <li>about</li>
@@ -37,17 +37,19 @@
                 <li>wtf</li>
             </ul>
         </div>
-        <div class="about">
-            <img src="img/8.jpg" alt="" />
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil iste perspiciatis delectus labore possimus suscipit repellat
-                dolore eum, cum ullam dolores debitis sed? Modi molestiae magni vitae quisquam consequuntur dolorem.
-            </p>
-            <ul class="social-networks clean-list">
-                <li>facebook</li>
-                <li>twitter</li>
-                <li>w/e</li>
-            </ul>
+        <div class="about flex">
+            <img class="portrait" src="img/8.jpg" alt="" />
+            <div class="flex column">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil iste perspiciatis delectus labore possimus suscipit repellat
+                    dolore eum, cum ullam dolores debitis sed? Modi molestiae magni vitae quisquam consequuntur dolorem.
+                </p>
+                <ul class="social-networks clean-list flex">
+                    <li>facebook</li>
+                    <li>twitter</li>
+                    <li>w/e</li>
+                </ul>
+            </div>
         </div>
         <div class="contact">
 
@@ -77,9 +79,9 @@
             <div class="editing more">More</div>
         </div>
         <div class="download flex" onclick="downloadMeme()">
-                <div class="arrow">&#8656</div>
-                <div class="download-text">Download</div>
-            </div>
+            <div class="arrow">&#8656</div>
+            <div class="download-text">Download</div>
+        </div>
 
     </editor>
 

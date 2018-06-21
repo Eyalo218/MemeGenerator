@@ -15,9 +15,27 @@ header {
     width: 100%;
     height: 63px;
     background-color: #222;
-    justify-content: space-between;
-    
+    justify-content: space-around;
+    align-items: center;
+}
 
+header button{
+    background-color: #222;
+    border:solid 1px rgb(168, 156, 156);
+    color: rgb(168, 156, 156);
+    font-size:1.4em;
+    cursor:pointer;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+    margin:0 10px;
+}
+
+img.portrait{
+    width: 100px;
+    height: 100px;
 }
 
 
@@ -33,11 +51,13 @@ header {
     display: flex; 
 }
 
+.column{
+    flex-direction: column;
+}
+
 
 /*  classes */
-img{
-    width: 100px;
-}
+
 
 .nav{
     display:none;
@@ -49,6 +69,8 @@ img{
 }
 
 .about{
+    justify-content: center;
+    align-content: center;
     background-color: aquamarine;
 }
 
@@ -116,6 +138,7 @@ img{
 .editing .buttons {
     width: 100%;
 }
+
 
 .editing button {
     height: 30px;
