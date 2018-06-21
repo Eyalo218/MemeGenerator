@@ -74,25 +74,29 @@ img.portrait{
 }
 
 .tags{
-    justify-content: space-between;
+    justify-content: space-around;
     align-items:center;
     background-color: orange;
     height: 150px;/*temp need to make it pixel perfect*/
+
 }
 
 .tags li{
-    align-self:center;
+    cursor: pointer;
+}
+
+.tags li:hover{
+    color:grey;
+    cursor: pointer;
 }
 
 .about{
     justify-content: center;
-    align-content: center;
+    align-items: center;
     background-color: aquamarine;
     height: 350px; /*temp need to make it pixel perfect*/
 }
-.about-text{
-    align-self:center;
-}
+
 
 .contact{
     background-color: blue;
