@@ -6,6 +6,7 @@ function togglePages(photoId) {
   elMain.classList.toggle("hidden");
   elEditor.classList.toggle("hidden");
   if (photoId !== undefined) renderEditingCanvas(photoId);
+  else document.querySelector('.text-insertion').value = '';
 }
 
 function renderGallery() {
@@ -40,9 +41,6 @@ function renderEditingCanvas(id) {
   var elCanvasContainer = document.querySelector(".canvas-container");
   var ctx = elCanvas.getContext("2d");
   var elEditor = document.querySelector(".editor.flex");
-  // elEditor.style.height = '100vh';
-  // var h = elEditor.height - 63;
-  // elEditor.style.height = h + 'px';
 
   img.onload = function() {
     var aspect = img.width / img.height;
@@ -65,6 +63,7 @@ function renderByTag(elText) {
   elGallery.innerHTML = setImagesForSorting(elText.value);
 }
 
+<<<<<<< HEAD
 
 
 function sortBy(elListItem){
@@ -74,3 +73,14 @@ function sortBy(elListItem){
   else if (size === 'x-large') size='xx-large';
   elListItem.style.fontSize = size;
 }
+=======
+function onTextInsertion(ev){
+  var currMeme = getCurrMeme();
+  var inputTxt = document.querySelector('.text-insertion');
+  currMeme.txts[0].line = inputTxt.value;
+  console.log(currMeme);
+  
+  renderEditingCanvas(currMeme.selectedImgId);
+return;
+}
+>>>>>>> 8e45b95ddabc4ff8a75a8bbe29c4c76e849a843a

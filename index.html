@@ -71,13 +71,14 @@
         <!-- <div class="empty"></div> -->
         <div class="editing-container">
             <div class="editing options flex">
-                <input type="text" placeholder="Enter your meme..." class="editing text-insertion"></input>
+                <input type="text" placeholder="Enter your meme..." 
+                class="editing text-insertion" oninput="onTextInsertion(event)"></input>
                 <div class="editing buttons flex">
-                    <button>A</button>
-                    <button>B</button>
-                    <button>C</button>
-                    <button>D</button>
-                    <button>E</button>
+                    <input type="color" class="input-color" value="#e66465"></input>
+                    <button class="btn-plus">+</button>
+                    <button class="btn-minus">-</button>
+                    <button class="btn-a">A</button>
+                    <button class="btn-b">B</button>
                 </div>
                 <div class="editing more">More</div>
             </div>
