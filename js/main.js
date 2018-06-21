@@ -42,7 +42,6 @@ function renderEditingCanvas(id) {
     ctx.drawImage(img, 0, 0, elCanvas.width, elCanvas.height);
   }
   renderText();
-
 }
 
 function toggleMenu(ev) {
