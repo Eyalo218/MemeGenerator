@@ -37,10 +37,12 @@ var gImgs = [
 ];
 
 var gMeme = {
-    selectedImgId: 5,
+    selectedImgId: 1,
+    selectedLineIdx: 0,
     txts: [
-        { line: 'I never eat Falafel', fontFamily: 'impact', fontSize: 40, alignHor: 'center', posVert: 0.13, color: 'red' },
-        { line: 'But Im Hungry', fontFamily: 'arial', fontSize: 50, alignHor: 'center', posVert: 0.9, color: 'yellow' }
+        { lineIdx: 0, content: '', fontFamily: 'impact', fontSize: 35, posHor: 0.5,
+         posVert: 0.55, color: 'red', shadow: 'no', stroke: 'no'
+         }
     ]
 }
 
@@ -80,4 +82,29 @@ function setImagesForSorting(sortBy) {
 
 function getCurrMeme(){
     return gMeme;
+}
+
+function setCurrMeme(imageId) {
+    gMeme.selectedImgId = imageId;
+}
+
+function clearMeme(){
+gMeme.txts = [
+        { lineIdx: 0, content: '', fontFamily: 'impact', fontSize: 35, posHor: 0.5,
+         posVert: 0.55, color: 'red', shadow: 'no', stroke: 'no'
+         }
+    ]
+    gMeme.selectedLineIdx = 0;
+}
+
+function addLine(){
+    var currColor = gMeme.txts[gMeme.selectedLineIdx].color;
+    var currFontSize = gMeme.txts[gMeme.selectedLineIdx].fontSize;
+    var lineIdx = gMeme.txts.length;
+    gMeme.txts.push(
+        { lineIdx: lineIdx, content: 'type...', fontFamily: 'impact', fontSize: currFontSize, posHor: 0.5,
+         posVert: 0.55, color: currColor, shadow: 'no', stroke: 'no'
+         }
+    );
+    gMeme.selectedLineIdx = lineIdx;
 }
