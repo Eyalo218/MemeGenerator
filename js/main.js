@@ -63,7 +63,6 @@ function renderByTag(elText) {
   elGallery.innerHTML = setImagesForSorting(elText.value);
 }
 
-<<<<<<< HEAD
 
 
 function sortBy(elListItem){
@@ -73,7 +72,6 @@ function sortBy(elListItem){
   else if (size === 'x-large') size='xx-large';
   elListItem.style.fontSize = size;
 }
-=======
 function onTextInsertion(ev){
   var currMeme = getCurrMeme();
   var inputTxt = document.querySelector('.text-insertion');
@@ -83,4 +81,13 @@ function onTextInsertion(ev){
   renderEditingCanvas(currMeme.selectedImgId);
 return;
 }
->>>>>>> 8e45b95ddabc4ff8a75a8bbe29c4c76e849a843a
+var x
+function downloadMeme(){
+  var elWE = document.querySelector('#canvas');
+  x = elWE.toDataURL();
+  var imgOrURL= x;
+  window.win - open(imgOrURL);
+  setTimeout('win.document.execCommand("SaveAs")', 0);
+}
+
+
