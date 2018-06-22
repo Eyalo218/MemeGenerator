@@ -168,14 +168,17 @@ img.portrait{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 24px;
+
 }
 
 .arrow {
     height: 60px;
-    line-height: 50px;
+    line-height: 60px;
     text-align: center;
     width: 10%;
     background-color: orange;
+    font-size: 35px;
 }
 
 .canvas-container {
@@ -227,7 +230,7 @@ img.portrait{
 
 
 .editing button {
-    height: 30px;
+    height: 35px;
     width: 20%;
 }
 
@@ -238,7 +241,7 @@ img.portrait{
 .editing button {
     width: 20%;
     background: linear-gradient(#222, #555, #333);
-    font-size: 22px;
+    font-size: 17px;
     font-weight: bold;
     color: white;
 }

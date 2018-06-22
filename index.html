@@ -74,11 +74,18 @@
                 <input type="text" placeholder="Enter your meme..." 
                 class="editing text-insertion" oninput="onTextInsertion(event)"></input>
                 <div class="editing buttons flex">
-                    <input type="color" class="input-color" value="#e66465"></input>
-                    <button class="btn-plus">+</button>
-                    <button class="btn-minus">-</button>
-                    <button class="btn-a">A</button>
-                    <button class="btn-b">B</button>
+                    <input type="color" class="input-color" value="#e66465" onchange="onColorChange(this.value)"</input>
+                    <button class="btn-plus" onclick="onButtonPlus()">+</button>
+                    <button class="btn-minus" onclick="onButtonMinus()">-</button>
+                    <button class="btn-a" onclick="onButtonA()">Shadow</button>
+                    <button class="btn-b" onclick="onButtonAdd()">Add</button>
+                </div>
+                <div class="editing buttons flex">
+                    <button class="btn-left" onclick="onButtonLeft()">&#8678</button>
+                    <button class="btn-right" onclick="onButtonRight()">&#8680</button>
+                    <button class="btn-up" onclick="onButtonUp()">&#8679</button>
+                    <button class="btn-down" onclick="onButtonDown()">&#8681</button>
+                    <button class="btn-delete" onclick="onButtonDel()">&#128465</button>
                 </div>
                 <div class="editing more">More</div>
             </div>
