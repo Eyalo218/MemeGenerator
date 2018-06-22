@@ -51,7 +51,6 @@ function setImagesForRendering() {
     var strHTML = '';
     for (let i = 0; i < gImgs.length; i++) {
         let img = gImgs[i];
-        // strHTML += `<img id="${img.id}" src="${img.url}" onclick="togglePages(${img.id})"/>`
         strHTML += `<div id="${img.id}" data-src="${img.url}" onclick="togglePages(${img.id})" 
         style="background-image:url(${img.url})"''/></div>`
     }

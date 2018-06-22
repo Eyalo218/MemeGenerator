@@ -59,7 +59,9 @@ function renderEditingCanvas(id) {
 function toggleMenu(ev) {
   ev.stopPropagation();
   var elMenu = document.querySelector(".menu");
-  elMenu.classList.toggle("hidden");
+  var elButton = document.querySelector(".menu-toggle");
+  elMenu.classList.toggle("menu-hidden");
+  elButton.classList.toggle("hidden");
 }
 
 function renderByTag(elText) {
@@ -100,13 +102,14 @@ function onButtonAdd() {
 return;
 }
 
-//still not working.. 
+
 function downloadMeme(){
-  var elWE = document.querySelector('#canvas');
-  x = elWE.toDataURL();
-  var imgOrURL= x;
-  window.win - open(imgOrURL);
-  setTimeout('win.document.execCommand("SaveAs")', 0);
+  window.open(canvas.toDataURL('image/png'));
+  var imageData = canvas.toDataURL('png');
+  var link  = document.createElement('a');
+  link.href = imageData;
+  link.download = 'image.png'
+  link.click()
 }
 
 

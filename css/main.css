@@ -19,10 +19,14 @@ header {
     background-color: #222;
     justify-content: space-around;
     align-items: center;
+    z-index: 1;
 }
 
 header h1{
-    color: rgb(168, 156, 156);
+    text-transform: capitalize;
+    color: #2eb398;
+    z-index: 1;
+    transition:0.8s
 }
 
 header button{
@@ -65,7 +69,7 @@ img.portrait{
 
 /*  classes */
 
-.menu-hidden{
+.menu.menu-hidden{
     
     transform: translate(100%, 0);
     
@@ -79,10 +83,9 @@ img.portrait{
     top: 0;
     right: 0;
     background-color: #222;
-    border-left: 1px solid rgba(102, 102, 102, 0.5);
     border-right:none;
     min-width: 250px;
-    transform: translate(0, 62px);
+    transform: translate(0, 0);
     transition: all .8s;
     align-items:center;
     justify-content: space-evenly;
@@ -95,6 +98,11 @@ img.portrait{
     height: 34px;
     font-size: 23px;
     text-transform: capitalize;
+    cursor: pointer;
+}
+
+.menu li:hover{
+    color: #2eb398;
 }
 
 .search-box{
@@ -109,8 +117,8 @@ img.portrait{
 
 .meme-container div{
     margin:6px 6px;
-    height: 200px;
-    width:200px;
+    height: 175px;
+    width:175px;
     background-repeat: no-repeat;
     background-size:cover;
     background-position: 50% 50%;
