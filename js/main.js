@@ -32,18 +32,26 @@ function renderText() {
   for (let i = 0; i < currMeme.txts.length; i++) {
     var txt = currMeme.txts[i];
     var posHor = txt.posHor * elCanvas.width;
+    var posVert = txt.posVert * elCanvas.height;
     // render black shadow under the text
     ctx.font = txt.fontSize + "px " + txt.fontFamily;
     if (txt.shadow === "yes") {
       ctx.fillStyle = "rgba(0,0,0,0.6)";
-      ctx.fillText(txt.content, posHor + 3, elCanvas.height * txt.posVert + 3);
+      ctx.fillText(
+        txt.content,
+        posHor + txt.fontSize * 0.1,
+        posVert + txt.fontSize * 0.12
+      );
     }
-    // render colored text, mark it using "difference" if it was clicked with mouse
+    // render colored text, make it flashing if it was clicked on
     ctx.fillStyle = txt.color;
-    if (gIsMarked && currMeme.selectedLineIdx === txt.lineIdx)
-      ctx.globalCompositeOperation = "difference";
-    else ctx.globalCompositeOperation = "source-over";
-    ctx.fillText(txt.content, posHor, elCanvas.height * txt.posVert);
+    if (gIsMarked && currMeme.selectedLineIdx === txt.lineIdx) continue;
+
+    if (txt.stroke === "yes") {
+      ctx.lineWidth = txt.fontSize * 0.06;
+      ctx.strokeText(txt.content, posHor, posVert);
+    }
+    ctx.fillText(txt.content, posHor, posVert);
   }
 }
 
@@ -93,12 +101,22 @@ function onTextInsertion() {
   return;
 }
 
-function onButtonA() {
+function onButtonShadow() {
   var currMeme = getCurrMeme();
   if (currMeme.txts[currMeme.selectedLineIdx].shadow === "no") {
     currMeme.txts[currMeme.selectedLineIdx].shadow = "yes";
   } else {
     currMeme.txts[currMeme.selectedLineIdx].shadow = "no";
+  }
+  renderEditingCanvas(currMeme.selectedImgId);
+}
+
+function onButtonStroke() {
+  var currMeme = getCurrMeme();
+  if (currMeme.txts[currMeme.selectedLineIdx].stroke === "no") {
+    currMeme.txts[currMeme.selectedLineIdx].stroke = "yes";
+  } else {
+    currMeme.txts[currMeme.selectedLineIdx].stroke = "no";
   }
   renderEditingCanvas(currMeme.selectedImgId);
 }
@@ -140,8 +158,9 @@ function onCanvasClicked(ev) {
 function markLine() {
   gIsMarked = true;
   renderEditingCanvas(getCurrMeme().selectedImgId);
-
+  if (gMarkInterval) clearInterval(gMarkInterval);
   gMarkInterval = setInterval(function() {
+    // makes the text flashing
     gIsMarked = !gIsMarked;
     renderEditingCanvas(getCurrMeme().selectedImgId);
   }, 70);
@@ -154,6 +173,19 @@ function markLine() {
   }, 520);
 }
 
+function onButtonDel() {
+  var currMeme = getCurrMeme();
+
+  if (currMeme.txts.length > 0) {
+    currMeme.txts[currMeme.selectedLineIdx].content = "";
+    document.querySelector(".text-insertion").value = "";
+    renderEditingCanvas(currMeme.selectedImgId);
+  }
+  // currMeme.txts.splice(currMeme.selectedLineIdx,1);
+  // currMeme.selectedLineIdx = currMeme.txts[0].lineIdx;
+  // renderEditingCanvas(currMeme.selectedImgId);
+}
+
 function onButtonPlus() {
   var currMeme = getCurrMeme();
   if (currMeme.txts[currMeme.selectedLineIdx].fontSize < 90)
@@ -163,7 +195,7 @@ function onButtonPlus() {
 
 function onButtonMinus() {
   var currMeme = getCurrMeme();
-  if (currMeme.txts[currMeme.selectedLineIdx].fontSize > 9)
+  if (currMeme.txts[currMeme.selectedLineIdx].fontSize > 12)
     currMeme.txts[currMeme.selectedLineIdx].fontSize /= 1.1;
   renderEditingCanvas(currMeme.selectedImgId);
 }
@@ -203,5 +235,13 @@ function onButtonUp() {
   var posVert = currMeme.txts[currMeme.selectedLineIdx].posVert - 0.05;
   if (posVert < 0.05) posVert = 0.05;
   currMeme.txts[currMeme.selectedLineIdx].posVert = posVert;
+  renderEditingCanvas(currMeme.selectedImgId);
+}
+
+function onFontSelection(el) {
+  var idx = el.selectedIndex;
+  var fonts = ['impact','apercu','proxima nova','brandon grotesque','avenir','gotham','circular','gt_alsheim','futura','stanley','caslon'];
+  var currMeme = getCurrMeme();
+  currMeme.txts[currMeme.selectedLineIdx].fontFamily = fonts[idx];
   renderEditingCanvas(currMeme.selectedImgId);
 }
