@@ -1,5 +1,9 @@
 "use strict";
 
+var gIsMarked = false;
+var gTimeout;
+var gMarkInterval;
+
 function togglePages(photoId) {
   var elMain = document.querySelector("main");
   var elEditor = document.querySelector("editor");
@@ -23,17 +27,22 @@ function renderGallery() {
 function renderText() {
   var elCanvas = document.querySelector("#canvas");
   var ctx = elCanvas.getContext("2d");
-
+  ctx.textAlign = "center";
   var currMeme = getCurrMeme();
   for (let i = 0; i < currMeme.txts.length; i++) {
     var txt = currMeme.txts[i];
-    ctx.font = txt.fontSize + "px " + txt.fontFamily;
     var posHor = txt.posHor * elCanvas.width;
+    // render black shadow under the text
+    ctx.font = txt.fontSize + "px " + txt.fontFamily;
     if (txt.shadow === "yes") {
-      ctx.fillStyle = "black";
+      ctx.fillStyle = "rgba(0,0,0,0.6)";
       ctx.fillText(txt.content, posHor + 3, elCanvas.height * txt.posVert + 3);
     }
+    // render colored text, mark it using "difference" if it was clicked with mouse
     ctx.fillStyle = txt.color;
+    if (gIsMarked && currMeme.selectedLineIdx === txt.lineIdx)
+      ctx.globalCompositeOperation = "difference";
+    else ctx.globalCompositeOperation = "source-over";
     ctx.fillText(txt.content, posHor, elCanvas.height * txt.posVert);
   }
 }
@@ -69,11 +78,11 @@ function renderByTag(elText) {
   elGallery.innerHTML = setImagesForSorting(elText.value);
 }
 
-function sortBy(elListItem){
-  let size = elListItem.style.fontSize
-  if (size === '') size='large';
-  else if (size === 'large') size='x-large';
-  else if (size === 'x-large') size='xx-large';
+function sortBy(elListItem) {
+  let size = elListItem.style.fontSize;
+  if (size === "") size = "large";
+  else if (size === "large") size = "x-large";
+  else if (size === "x-large") size = "xx-large";
   elListItem.style.fontSize = size;
 }
 function onTextInsertion() {
@@ -97,33 +106,65 @@ function onButtonA() {
 function onButtonAdd() {
   var currMeme = getCurrMeme();
   addLine();
-  document.querySelector(".text-insertion").value = '';
+  document.querySelector(".text-insertion").value = "";
   renderEditingCanvas(currMeme.selectedImgId);
-return;
+  return;
 }
 
-
-function downloadMeme(){
-  window.open(canvas.toDataURL('image/png'));
-  var imageData = canvas.toDataURL('png');
-  var link  = document.createElement('a');
+function downloadMeme() {
+  window.open(canvas.toDataURL("image/png"));
+  var imageData = canvas.toDataURL("png");
+  var link = document.createElement("a");
   link.href = imageData;
-  link.download = 'image.png'
-  link.click()
+  link.download = "image.png";
+  link.click();
 }
 
+function onCanvasClicked(ev) {
+  var canvasHeight = document.querySelector("#canvas").height;
+  var posVert = ev.offsetY / canvasHeight;
+  var currMeme = getCurrMeme();
+  for (let i = 0; i < currMeme.txts.length; i++) {
+    var currLine = currMeme.txts[i];
+    if (
+      currLine.posVert - posVert < currLine.fontSize / canvasHeight &&
+      currLine.posVert - posVert > 0
+    ) {
+      currMeme.selectedLineIdx = currLine.lineIdx;
+      document.querySelector(".text-insertion").value = currLine.content;
+      markLine();
+    }
+  }
+}
 
+function markLine() {
+  gIsMarked = true;
+  renderEditingCanvas(getCurrMeme().selectedImgId);
 
+  gMarkInterval = setInterval(function() {
+    gIsMarked = !gIsMarked;
+    renderEditingCanvas(getCurrMeme().selectedImgId);
+  }, 70);
+
+  gTimeout = setTimeout(function() {
+    clearInterval(gMarkInterval);
+    gIsMarked = false;
+    renderEditingCanvas(getCurrMeme().selectedImgId);
+    clearTimeout(gTimeout);
+  }, 520);
+}
 
 function onButtonPlus() {
   var currMeme = getCurrMeme();
-  if (currMeme.txts[currMeme.selectedLineIdx].fontSize < 90) currMeme.txts[currMeme.selectedLineIdx].fontSize *= 1.1;
+  if (currMeme.txts[currMeme.selectedLineIdx].fontSize < 90)
+    currMeme.txts[currMeme.selectedLineIdx].fontSize *= 1.1;
   renderEditingCanvas(currMeme.selectedImgId);
 }
 
 function onButtonMinus() {
   var currMeme = getCurrMeme();
-  if (currMeme.txts[currMeme.selectedLineIdx].fontSize > 9) currMeme.txts[currMeme.selectedLineIdx].fontSize /= 1.1;
+  if (currMeme.txts[currMeme.selectedLineIdx].fontSize > 9)
+    currMeme.txts[currMeme.selectedLineIdx].fontSize /= 1.1;
   renderEditingCanvas(currMeme.selectedImgId);
 }
 
