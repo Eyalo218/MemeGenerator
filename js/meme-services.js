@@ -46,6 +46,14 @@ var gMeme = {
     ]
 }
 
+function setSearchKeyWordsForRendering(){
+    for (let key in object) {
+        if (object.hasOwnProperty(key)) {
+            const element = object[key];
+            
+        }
+    }
+}
 
 function setImagesForRendering() {
 
