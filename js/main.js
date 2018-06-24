@@ -106,6 +106,7 @@ function filterBy(elListItem) {
   elListItem.style.fontSize = size;
   var elGallery = document.querySelector('.meme-container');
   elGallery.innerHTML = setImagesForSorting(elListItem.innerText);
+  saveToStorage(g)
 }
 
 function onTextInsertion() {
