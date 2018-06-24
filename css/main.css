@@ -46,7 +46,10 @@ header button{
     font-size:1.4em;
     cursor:pointer;
 }
-
+.fonts{
+    width:100%;
+    height: 100%;
+}
 img.portrait{
     align-self:center;
     width: 100px;

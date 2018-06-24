@@ -169,14 +169,9 @@ function onCanvasClicked(ev) {
 function markLine() {
   gIsMarked = true;
   renderEditingCanvas(getCurrMeme().selectedImgId);
-<<<<<<< HEAD
-
-  gMarkInterval = setInterval(function () {
-=======
   if (gMarkInterval) clearInterval(gMarkInterval);
   gMarkInterval = setInterval(function() {
     // makes the text flashing
->>>>>>> 737dcb9bb8acce2a232c658f56a9c2780b3cf41d
     gIsMarked = !gIsMarked;
     renderEditingCanvas(getCurrMeme().selectedImgId);
   }, 70);
