@@ -66,7 +66,9 @@
 
 
         <div class="back-to flex" onclick="togglePages()">
-            <div class="arrow">&#8656</div>
+            <div class="arrow">
+                <img src="svg/back-arrow-svgrepo-com.svg" alt="back">
+            </div>
             <div class="back-text">Back to Gallery</div>
         </div>
         <div class="canvas-container flex">
@@ -77,23 +79,50 @@
             <div class="editing options flex">
                 <input type="text" placeholder="Enter your meme..." class="editing text-insertion" oninput="onTextInsertion(event)"></input>
                 <div class="editing buttons flex">
+<<<<<<< HEAD
                     <input type="color" class="input-color" value="#e66465" onchange="onColorChange(this.value)" </input>
+=======
+>>>>>>> 737dcb9bb8acce2a232c658f56a9c2780b3cf41d
                     <button class="btn-plus" onclick="onButtonPlus()">+</button>
                     <button class="btn-minus" onclick="onButtonMinus()">-</button>
-                    <button class="btn-a" onclick="onButtonA()">Shadow</button>
-                    <button class="btn-b" onclick="onButtonAdd()">Add</button>
+                    <button class="btn-add" onclick="onButtonAdd()">Add</button>
+                    <button class="btn-delete" onclick="onButtonDel()">&#128465</button>
                 </div>
                 <div class="editing buttons flex">
                     <button class="btn-left" onclick="onButtonLeft()">&#8678</button>
                     <button class="btn-right" onclick="onButtonRight()">&#8680</button>
                     <button class="btn-up" onclick="onButtonUp()">&#8679</button>
                     <button class="btn-down" onclick="onButtonDown()">&#8681</button>
-                    <button class="btn-delete" onclick="onButtonDel()">&#128465</button>
                 </div>
-                <div class="editing more">More</div>
+                <div class="editing buttons flex">
+                    <input type="color" class="input-color" value="#e66465" onchange="onColorChange(this.value)" </input>
+                    <button class="btn-shadow" onclick="onButtonShadow()">Shadow</button>
+                    <button class="btn-stroke" onclick="onButtonStroke()">Stroke</button>
+
+                    <div class="font-select">
+                            <select onchange="onFontSelection(this)">
+                              <option value="0">Impact</option>
+                              <option value="1">Apercu</option>
+                              <option value="2">Proxima Nova</option>
+                              <option value="3">Brandon Grotesque</option>
+                              <option value="4">Avenir</option>
+                              <option value="5">Gotham</option>
+                              <option value="6">Circular</option>
+                              <option value="7">GT walsheim</option>
+                              <option value="8">Futura</option>
+                              <option value="9">Stanley</option>
+                              <option value="10">Caslon</option>
+                            </select>
+                          </div>
+
+                    <!-- <button class="btn-font" onclick="onButtonFont()">Font</button> -->
+                </div>
+                <!-- <div class="editing more">More</div> -->
             </div>
             <div class="download flex" onclick="downloadMeme()">
-                <div class="arrow">&#8656</div>
+                <div class="arrow">
+                    <img src="svg/69656.svg" alt="download">
+                </div>
                 <div class="download-text">Download</div>
             </div>
         </div>
