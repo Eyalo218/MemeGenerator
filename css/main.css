@@ -1,306 +1,357 @@
 /* fontFace */
-@font-face{
-    src:url('../fonts/Lato-Regular.ttf');
-    font-family:'lato';
+@font-face {
+  src: url("../fonts/Lato-Regular.ttf");
+  font-family: "lato";
+}
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("../fonts/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "Arimo", sans-serif;
+  src: url("../fonts/Arimo-Regular.ttf");
+}
+@font-face {
+  font-family: "Rubik", sans-serif;
+  src: url("../fonts/Rubik-Regular.ttf");
+}
+@font-face {
+  font-family: "Shrikhand", cursive;
+  src: url("../fonts/Shrikhand-Regular.ttf");
+}
+@font-face {
+  font-family: "Varela Round", sans-serif;
+  src: url("../fonts/VarelaRound-Regular.ttf");
+}
+@font-face {
+  font-family: "Roboto Mono", monospace;
+  src: url("../fonts/RobotoMono-Regular.ttf");
+}
+@font-face {
+  font-family: "Indie Flower", cursive;
+  src: url("../fonts/IndieFlower.ttf");
 }
 
-/* @font-face{
-    src:url('../fonts/eurof-regular.ttf');
-    font-family:'eurof';
-} */
-
-*{
-    box-sizing: border-box;
+@font-face {
+  font-family: "Eater", cursive;
+  src: url("../fonts/Eater-Regular.ttf");
+}
+@font-face {
+  font-family: "Anton", sans-serif;
+  src: url("../fonts/Anton-Regular.ttf");
+}
+@font-face {
+  font-family: "Lobster", cursive;
+  src: url("../fonts/Lobster-Regular.ttf");
+}
+@font-face {
+  font-family: "Pacifico", cursive;
+  src: url("../fonts/Pacifico-Regular.ttf");
+}
+@font-face {
+  font-family: "Paytone One", sans-serif;
+  src: url("../fonts/PaytoneOne-Regular.ttf");
+}
+@font-face {
+  font-family: "Shadows Into Light", cursive;
+  src: url("../fonts/ShadowsIntoLight.ttf");
+}
+@font-face {
+  font-family: "Dancing Script", cursive;
+  src: url("../fonts/DancingScript-Regular.ttf");
 }
 
-html{
-     margin:0;
-     height: 100%;
-     font-family: 'lato';
+@font-face {
+  font-family: "Acme", sans-serif;
+  src: url("../fonts/Acme-Regular.ttf");
 }
 
-body{
-    margin:0;
-    height: 100%;
+@font-face {
+  font-family: "Gloria Hallelujah", cursive;
+  src: url("../fonts/GloriaHallelujah.ttf");
+}
+
+@font-face {
+  font-family: "Russo One", sans-serif;
+  src: url("../fonts/RussoOne-Regular.ttf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  height: 100%;
+  font-family: "lato";
+}
+
+body {
+  margin: 0;
+  height: 100%;
 }
 
 header {
-    width: 100%;
-    height: 8%;
-    background-color: #222;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 1;
+  width: 100%;
+  height: 8%;
+  background-color: #222;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
 }
 
-header h1{
-    text-transform: capitalize;
-    color: #2eb398;
-    z-index: 1;
-    transition:0.8s
+header h1 {
+  text-transform: capitalize;
+  color: #2eb398;
+  z-index: 1;
+  transition: 0.8s;
 }
 
-header button{
-    background-color: #222;
-    border:solid 1px rgb(168, 156, 156);
-    color: rgb(168, 156, 156);
-    font-size:1.4em;
-    cursor:pointer;
+header button {
+  background-color: #222;
+  border: solid 1px rgb(168, 156, 156);
+  color: rgb(168, 156, 156);
+  font-size: 1.4em;
+  cursor: pointer;
 }
-.fonts{
-    width:100%;
-    height: 100%;
+.fonts {
+  width: 100%;
+  height: 100%;
 }
-img.portrait{
-    align-self:center;
-    width: 100px;
-    height: 100px;
+img.portrait {
+  align-self: center;
+  width: 100px;
+  height: 100px;
 }
-
 
 /* helpers  */
 
-.clean-list{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.clean-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.flex{
-    display: flex; 
+.flex {
+  display: flex;
 }
 
-.column{
-    flex-direction: column;
+.column {
+  flex-direction: column;
 }
-
 
 /*  classes */
 
-.menu.menu-hidden{
-    
-    transform: translate(100%, 0);
-    
+.menu.menu-hidden {
+  transform: translate(100%, 0);
 }
-
 
 .menu {
-    flex-direction: column;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: #222;
-    border-right:none;
-    min-width: 250px;
-    transform: translate(0, 0);
-    transition: all .8s;
-    align-items:center;
-    justify-content: space-evenly;
-    color: rgb(168, 156, 156);
-
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #222;
+  border-right: none;
+  min-width: 250px;
+  transform: translate(0, 0);
+  transition: all 0.8s;
+  align-items: center;
+  justify-content: space-evenly;
+  color: rgb(168, 156, 156);
 }
 
-.menu li{
-    width: 122px;
-    height: 34px;
-    font-size: 23px;
-    text-transform: capitalize;
-    cursor: pointer;
+.menu li {
+  width: 122px;
+  height: 34px;
+  font-size: 23px;
+  text-transform: capitalize;
+  cursor: pointer;
 }
 
-.menu li:hover{
-    color: #2eb398;
+.menu li:hover {
+  color: #2eb398;
 }
 
-.menu li a:link{
-    color: rgb(168, 156, 156);
+.menu li a:link {
+  color: rgb(168, 156, 156);
 }
 
-.menu li a:visited{
-    color: rgb(168, 156, 156);
+.menu li a:visited {
+  color: rgb(168, 156, 156);
 }
 
-.menu li a:hover{
-    color: #2eb398;
+.menu li a:hover {
+  color: #2eb398;
 }
 
-.search-box{
-    justify-content: center;
-    margin-top:20px;
+.search-box {
+  justify-content: center;
+  margin-top: 20px;
 }
 
-.meme-container{
-    justify-content: center;
-    flex-wrap: wrap;    
+.meme-container {
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.meme-container div{
-    margin:6px 6px;
-    height: 175px;
-    width:175px;
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-position: 50% 50%;
-
-
+.meme-container div {
+  margin: 6px 6px;
+  height: 175px;
+  width: 175px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
 }
 
-.tags{
-    justify-content: space-around;
-    align-items:center;
-    background-color: orange;
-    height: 150px;/*temp need to make it pixel perfect*/
-
+.tags {
+  justify-content: space-around;
+  align-items: center;
+  background-color: orange;
+  height: 150px; /*temp need to make it pixel perfect*/
 }
 
-.tags li{
-    cursor: pointer;
+.tags li {
+  cursor: pointer;
 }
 
-.tags li:hover{
-    color:grey;
-    cursor: pointer;
+.tags li:hover {
+  color: grey;
+  cursor: pointer;
 }
 
-.about{
-    justify-content: center;
-    align-items: center;
-    background-color: aquamarine;
-    height: 350px; /*temp need to make it pixel perfect*/
+.about {
+  justify-content: center;
+  align-items: center;
+  background-color: aquamarine;
+  height: 350px; /*temp need to make it pixel perfect*/
 }
 
-
-.contact{
-    background-color: blue;
-    height: 90px;
+.contact {
+  background-color: blue;
+  height: 90px;
 }
 
 .hidden {
-    display:none;
+  display: none;
 }
 
 .back-to {
-    /* margin-bottom: 20px; */
-    justify-content: space-between;
-    height: 60px;
-    /* height: 80px; */
+  /* margin-bottom: 20px; */
+  justify-content: space-between;
+  height: 60px;
+  /* height: 80px; */
 }
 
-.back-text, .download-text {
-    width: 90%;
-    margin: 0;
-    height: 60px;
-    /* line-height: 50px; */
-    background-color: #2da;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-
+.back-text,
+.download-text {
+  width: 90%;
+  margin: 0;
+  height: 60px;
+  /* line-height: 50px; */
+  background-color: #2da;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
 }
 
 .arrow {
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    width: 10%;
-    background-color: rgb(124, 211, 9);
-    font-size: 35px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  width: 10%;
+  background-color: rgb(124, 211, 9);
+  font-size: 35px;
 }
 
 .canvas-container {
-    width: 100%;
-    height: 100%;
-    background-color: #555;
-    margin-bottom: 20px;
-    justify-content: center;
-    align-items: center;
-
+  width: 100%;
+  height: 100%;
+  background-color: #555;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 #canvas {
-    margin-top: 20px;
-    border: 1px black solid;
+  margin-top: 20px;
+  border: 1px black solid;
 }
 
 .empty {
-    height: 100%;
-
+  height: 100%;
 }
 
 .editor.flex {
-    flex-direction: column;
-    padding: 20px;
-    background-color: #555;
-    min-height: 92%;
-    justify-content: space-between;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #555;
+  min-height: 92%;
+  justify-content: space-between;
 }
 
 .editing.options {
-    background-color: #999;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
+  background-color: #999;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .editing.options input {
-    font-size: 22px;
+  font-size: 22px;
 }
 
 .editing-container {
-    height: 200px;
+  height: 200px;
 }
 
 .editing text-insertion {
-    width: 100%;
+  width: 100%;
 }
 
 .editing .buttons {
-    width: 100%;
+  width: 100%;
 }
 
 .editing button {
-    height: 35px;
-    width: 25%;
-    background: linear-gradient(#222, #555, #333);
-    font-size: 15px;
-    font-weight: bold;
-    color: white;
+  height: 35px;
+  width: 25%;
+  background: linear-gradient(#222, #555, #333);
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
 }
 
-.input-color  {
-    width: 25%;
-    height: 35px;
+.input-color {
+  width: 25%;
+  height: 35px;
 }
 
-.input-color:hover, button:hover {
-    /* filter: brightness(2.3); */
-    /* filter: drop-shadow(8px,4px); */
-    /* filter: hue-rotate(180deg); */
-    filter: invert(80%);
+.input-color:hover,
+button:hover {
+  filter: invert(80%);
 }
 
-.back-to.flex:hover ,.download.flex:hover {
-    filter: invert(80%);
+.back-to.flex:hover,
+.download.flex:hover {
+  filter: invert(80%);
 }
 
 .download.flex {
-    height: 50px;
+  height: 50px;
 }
 
-.download img, .back-to img {
-    width: 90%;
-    height: 90%;
-    margin: 0;
-    margin-top: 10%;
+.download img,
+.back-to img {
+  width: 90%;
+  height: 90%;
+  margin: 0;
+  margin-top: 10%;
 }
 
 .font-select {
-    width: 25%;
-}
-
-.font-select option {
-    /* width: 25%; */
+  width: 25%;
 }

@@ -24,11 +24,10 @@ function renderGallery() {
   elGallery.innerHTML = setImagesForRendering();
   setkeyWordsMap();
   var keywords = getPopularKeyWordlist();
-  var elKeywords = document.querySelector('.tags');
+  var elKeywords = document.querySelector(".tags");
   elKeywords.innerHTML = setKeyWordsForRendering(keywords);
-  var elSearchWords = documents.querySelector('#search-keywords');
-  elSearchWords.innerHTML = setSearchKeyWords()
-
+  var elSearchWords = documents.querySelector("#search-keywords");
+  elSearchWords.innerHTML = setSearchKeyWords();
 }
 
 // ****************************** RENDER TEXT ************
@@ -64,14 +63,14 @@ function renderText() {
 }
 
 function renderEditingCanvas(id) {
-  document.querySelector(".text-insertion").focus();
+  // document.querySelector(".text-insertion").focus();
   var img = new Image();
   img.src = getImageById(id).url;
   var elCanvas = document.querySelector("#canvas");
   var elCanvasContainer = document.querySelector(".canvas-container");
   var ctx = elCanvas.getContext("2d");
 
-  img.onload = function () {
+  img.onload = function() {
     var aspect = img.width / img.height;
     elCanvas.width = elCanvasContainer.clientWidth;
     elCanvas.height = elCanvas.width / aspect;
@@ -95,7 +94,7 @@ function renderByTag(elText) {
 }
 
 function filterBy(elListItem) {
-  elListItem.value++
+  elListItem.value++;
   let searchAmount = elListItem.value;
   let size;
   if (searchAmount >= 1 && searchAmount < 5) size = "large";
@@ -178,7 +177,7 @@ function markLine() {
     renderEditingCanvas(getCurrMeme().selectedImgId);
   }, 70);
 
-  gTimeout = setTimeout(function () {
+  gTimeout = setTimeout(function() {
     clearInterval(gMarkInterval);
     gIsMarked = false;
     renderEditingCanvas(getCurrMeme().selectedImgId);
@@ -194,9 +193,6 @@ function onButtonDel() {
     document.querySelector(".text-insertion").value = "";
     renderEditingCanvas(currMeme.selectedImgId);
   }
-  // currMeme.txts.splice(currMeme.selectedLineIdx,1);
-  // currMeme.selectedLineIdx = currMeme.txts[0].lineIdx;
-  // renderEditingCanvas(currMeme.selectedImgId);
 }
 
 function onButtonPlus() {
@@ -253,7 +249,29 @@ function onButtonUp() {
 
 function onFontSelection(el) {
   var idx = el.selectedIndex;
-  var fonts = ['impact','apercu','proxima nova','brandon grotesque','avenir','gotham','circular','gt_alsheim','futura','stanley','caslon'];
+  var fonts = [
+    "Impact",
+    "Roboto",
+    "Arimo",
+    "Rubik",
+    "Gloria Hallelujah",
+    "Russo One",
+    "Roboto Mono",
+    "Shrikhand",
+    "Varela Round",
+    "Indie Flower",
+    "Eater",
+    "Anton",
+    "Lobster",
+    "Pacifico",
+    "Paytone One",
+    "Shadows Into Light",
+    "Dancing Script",
+    "Acme",
+    "Arial",
+    "Times New Roman",
+    "David"
+  ];
   var currMeme = getCurrMeme();
   currMeme.txts[currMeme.selectedLineIdx].fontFamily = fonts[idx];
   renderEditingCanvas(currMeme.selectedImgId);
