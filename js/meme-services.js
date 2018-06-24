@@ -46,6 +46,15 @@ var gMeme = {
     ]
 }
 
+function setSearchKeyWordsForRendering(){
+    for (let key in object) {
+        if (object.hasOwnProperty(key)) {
+            const element = object[key];
+            
+        }
+    }
+}
+
 function setImagesForRendering() {
 
     var strHTML = '';
@@ -84,19 +93,6 @@ function getCurrMeme() {
 }
 
 // need to sort this out.
-
-// function getKeyWords() {
-//     console.log('llala');
-//     for (let i = 0; i < gImgs.length; i++) {
-//         let currImg = gImgs[i];
-//         for (let j = 0; j < currImg.keywords; j++) {
-//             console.log(currImg.keywords[j]);
-//             if (gKeyWords.indexOf(currImg.keywords[j] === -1))
-//                 gKeyWords.push(currImg.keywords[j]);
-//         }
-//     }
-// }
-
 
 function setCurrMeme(imageId) {
     gMeme.selectedImgId = imageId;

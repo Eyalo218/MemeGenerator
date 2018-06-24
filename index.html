@@ -32,9 +32,14 @@
     </header>
     <main>
         <div class="search-box flex">
-            <input onkeyup="renderByTag(this)" type="text" name="" id="" placeholder="Tags">
-            <input type="text" name="myText" value="Norway" onchange="renderByTag(this)"
-                selectBoxOptions="Canada;Denmark;Finland;Germany;Mexico"> 
+            <input onkeyup="renderByTag(this)" type="text" name="" id="" placeholder="Tags" list="keywords">
+            <datalist id="keywords">
+                <option value="animal">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
         </div>
         <div class="meme-container flex" id="meme-container">
         </div>
