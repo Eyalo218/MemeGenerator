@@ -26,7 +26,8 @@ function renderGallery() {
   var keywords = getPopularKeyWordlist();
   var elKeywords = document.querySelector('.tags');
   elKeywords.innerHTML = setKeyWordsForRendering(keywords);
-  var elSearchWords = documents.querySelector('#search-keywords')
+  var elSearchWords = documents.querySelector('#search-keywords');
+  elSearchWords.innerHTML = setSearchKeyWords()
 
 }
 
