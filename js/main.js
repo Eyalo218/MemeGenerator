@@ -13,9 +13,12 @@ function togglePages(photoId) {
   if (photoId !== undefined) {
     setCurrMeme(photoId);
     renderEditingCanvas(photoId);
+    document.querySelector(".menu-toggle").classList.toggle('hidden');
+    document.querySelector(".input-color").value = '#ffffff';
   } else {
     document.querySelector(".text-insertion").value = "";
     clearMeme();
+    document.querySelector(".menu-toggle").classList.toggle('hidden');
   }
 }
 
@@ -26,8 +29,8 @@ function renderGallery() {
   var keywords = getPopularKeyWordlist();
   var elKeywords = document.querySelector(".tags");
   elKeywords.innerHTML = setKeyWordsForRendering(keywords);
-  var elSearchWords = documents.querySelector("#search-keywords");
-  elSearchWords.innerHTML = setSearchKeyWords();
+  var elSearchWords = document.querySelector("#search-keywords");
+  elSearchWords.innerHTML = setSearchKeysForRendering();
 }
 
 // ****************************** RENDER TEXT ************
@@ -63,7 +66,6 @@ function renderText() {
 }
 
 function renderEditingCanvas(id) {
-  // document.querySelector(".text-insertion").focus();
   var img = new Image();
   img.src = getImageById(id).url;
   var elCanvas = document.querySelector("#canvas");
@@ -136,7 +138,9 @@ function onButtonStroke() {
 function onButtonAdd() {
   var currMeme = getCurrMeme();
   addLine();
-  document.querySelector(".text-insertion").value = "";
+  var el = document.querySelector(".text-insertion");
+  el.value = "";
+  el.focus();
   renderEditingCanvas(currMeme.selectedImgId);
   return;
 }
@@ -213,6 +217,7 @@ function onColorChange(val) {
   var currMeme = getCurrMeme();
   currMeme.txts[currMeme.selectedLineIdx].color = val;
   renderEditingCanvas(currMeme.selectedImgId);
+  document.querySelector(".input-color").value = val;
 }
 
 function onButtonLeft() {

@@ -35,13 +35,8 @@
     </header>
     <main>
         <div class="search-box flex">
-            <input onkeyup="renderByTag(this)" type="text" name="" id="" placeholder="Tags" list="keywords">
-            <datalist id="keywords">
-                <option value="animal">
-                <option value="Firefox">
-                <option value="Chrome">
-                <option value="Opera">
-                <option value="Safari">
+            <input onkeyup="renderByTag(this)" type="text" name="" id="" placeholder="Tags" list="search-keywords">
+            <datalist id="search-keywords">
             </datalist>
         </div>
         <div class="meme-container flex" id="meme-container">
@@ -73,7 +68,7 @@
                         <input type="text" class="name" placeholder="Name(Required)" required>
                         <input type="email" class="email" placeholder="Email(Required)" required>
                         <input type="text" class="subject" placeholder="Subject">
-                        <input type="text" class="message" placeholder="Write your message here...">
+                        <textarea type="text" class="message" placeholder="Write your message here..."></textarea>
                         <button type="submit" class="send">SEND</button>
                         </form>
                     </div>
@@ -91,7 +86,7 @@
     </main>
 
     <editor class="editor hidden flex">
-
+        <div class="backto-canvascontainer">
         <div class="back-to flex" onclick="togglePages()">
             <div class="arrow">
                 <img src="svg/back-arrow-svgrepo-com.svg" alt="back">
@@ -101,6 +96,8 @@
         <div class="canvas-container flex">
             <canvas id="canvas" onclick="onCanvasClicked(event)" </canvas>
         </div>
+        </div>
+    
         <!-- <div class="empty"></div> -->
         <div class="editing-container">
             <div class="editing options flex">
@@ -108,7 +105,7 @@
                 <div class="editing buttons flex">
                     <button class="btn-plus" onclick="onButtonPlus()">+</button>
                     <button class="btn-minus" onclick="onButtonMinus()">-</button>
-                    <button class="btn-add" onclick="onButtonAdd()">Add</button>
+                    <button class="btn-add" onclick="onButtonAdd()">Add Line</button>
                     <button class="btn-delete" onclick="onButtonDel()">&#128465</button>
                 </div>
                 <div class="editing buttons flex">
@@ -118,7 +115,7 @@
                     <button class="btn-down" onclick="onButtonDown()">&#8681</button>
                 </div>
                 <div class="editing buttons flex">
-                    <input type="color" class="input-color" value="#e66465" onchange="onColorChange(this.value)" </input>
+                    <input type="color" class="input-color" onchange="onColorChange(this.value)" </input>
                     <button class="btn-shadow" onclick="onButtonShadow()">Shadow</button>
                     <button class="btn-stroke" onclick="onButtonStroke()">Stroke</button>
 
