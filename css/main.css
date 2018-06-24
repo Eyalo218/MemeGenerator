@@ -3,6 +3,7 @@
     src:url('../fonts/Lato-Regular.ttf');
     font-family:'lato';
 }
+
 /* @font-face{
     src:url('../fonts/eurof-regular.ttf');
     font-family:'eurof';
@@ -54,6 +55,7 @@ img.portrait{
     align-self:center;
     width: 100px;
     height: 100px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
 
@@ -141,6 +143,8 @@ img.portrait{
     background-repeat: no-repeat;
     background-size:cover;
     background-position: 50% 50%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+
 
 }
 
