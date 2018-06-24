@@ -14,32 +14,35 @@
         <h1 class="logo">Meme generator</h1>
         <button onclick="toggleMenu(event)" class="menu-toggle">☰</button>
         <ul class="menu-hidden clean-list flex column menu">
-            <li>portfolio</li>
-            <li>about</li>
+            <li>
+                <a href="#meme-container">portfollio</a>
+            </li>
+            <li>
+                <a href="#about-me">about</a>
+            </li>
             <li class="hidden">Img</li>
-            <li>blog</li>
-            <li>get in touch</li>
+            <li>
+                <a href="#">blog</a>
+            </li>
+            <li>
+                <a href="#contact-me">contact</a>
+            </li>
             <li onclick="toggleMenu(event)">close</li>
         </ul>
     </header>
     <main>
         <div class="search-box flex">
             <input onkeyup="renderByTag(this)" type="text" name="" id="" placeholder="Tags">
+            <input type="text" name="myText" value="Norway" onchange="renderByTag(this)"
+                selectBoxOptions="Canada;Denmark;Finland;Germany;Mexico"> 
         </div>
-        <div class="meme-container flex">
+        <div class="meme-container flex" id="meme-container">
         </div>
         <div>
             <ul class="tags clean-list flex">
-                <!-- need to render that list by Amount of keywords -->
-                <li onclick="sortBy(this)">funny</li>
-                <li>animal</li>
-                <li>bad</li>
-                <li>anime</li>
-                <li>games</li>
-                <li>wtf</li>
             </ul>
         </div>
-        <div class="about flex">
+        <div class="about flex" id="about-me">
             <img class="portrait" src="img/8.jpg" alt="" />
             <div class="flex column about-text">
                 <p>
@@ -53,7 +56,7 @@
                 </ul>
             </div>
         </div>
-        <div class="contact">
+        <div class="contact" id="contact-me">
 
 
         </div>
@@ -67,15 +70,14 @@
             <div class="back-text">Back to Gallery</div>
         </div>
         <div class="canvas-container flex">
-            <canvas id="canvas" onclick="onCanvasClicked(event)"</canvas>
+            <canvas id="canvas" onclick="onCanvasClicked(event)" </canvas>
         </div>
         <!-- <div class="empty"></div> -->
         <div class="editing-container">
             <div class="editing options flex">
-                <input type="text" placeholder="Enter your meme..." 
-                class="editing text-insertion" oninput="onTextInsertion(event)"></input>
+                <input type="text" placeholder="Enter your meme..." class="editing text-insertion" oninput="onTextInsertion(event)"></input>
                 <div class="editing buttons flex">
-                    <input type="color" class="input-color" value="#e66465" onchange="onColorChange(this.value)"</input>
+                    <input type="color" class="input-color" value="#e66465" onchange="onColorChange(this.value)" </input>
                     <button class="btn-plus" onclick="onButtonPlus()">+</button>
                     <button class="btn-minus" onclick="onButtonMinus()">-</button>
                     <button class="btn-a" onclick="onButtonA()">Shadow</button>

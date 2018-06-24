@@ -1,5 +1,6 @@
 "use strict";
 
+createEditableSelect(document.forms[0].myText);
 var gIsMarked = false;
 var gTimeout;
 var gMarkInterval;
@@ -21,6 +22,11 @@ function togglePages(photoId) {
 function renderGallery() {
   var elGallery = document.querySelector(".meme-container");
   elGallery.innerHTML = setImagesForRendering();
+  setkeyWordsMap();
+  var keywords = getPopularKeyWordlist();
+  var elKeywords = document.querySelector('.tags');
+  elKeywords.innerHTML = setKeyWordsForRendering(keywords)
+
 }
 
 // ****************************** RENDER TEXT ************
@@ -55,7 +61,7 @@ function renderEditingCanvas(id) {
   var elCanvasContainer = document.querySelector(".canvas-container");
   var ctx = elCanvas.getContext("2d");
 
-  img.onload = function() {
+  img.onload = function () {
     var aspect = img.width / img.height;
     elCanvas.width = elCanvasContainer.clientWidth;
     elCanvas.height = elCanvas.width / aspect;
@@ -78,13 +84,18 @@ function renderByTag(elText) {
   elGallery.innerHTML = setImagesForSorting(elText.value);
 }
 
-function sortBy(elListItem) {
-  let size = elListItem.style.fontSize;
-  if (size === "") size = "large";
-  else if (size === "large") size = "x-large";
-  else if (size === "x-large") size = "xx-large";
+function filterBy(elListItem) {
+  elListItem.value++
+  let searchAmount = elListItem.value;
+  let size;
+  if (searchAmount >= 1 && searchAmount < 5) size = "large";
+  else if (searchAmount >= 5 && searchAmount < 10) size = "x-large";
+  else size = "xx-large";
   elListItem.style.fontSize = size;
+  var elGallery = document.querySelector(".meme-container");
+  elGallery.innerHTML = setImagesForSorting(elListItem.innerText);
 }
+
 function onTextInsertion() {
   var currMeme = getCurrMeme();
   var inputTxt = document.querySelector(".text-insertion");
@@ -141,12 +152,12 @@ function markLine() {
   gIsMarked = true;
   renderEditingCanvas(getCurrMeme().selectedImgId);
 
-  gMarkInterval = setInterval(function() {
+  gMarkInterval = setInterval(function () {
     gIsMarked = !gIsMarked;
     renderEditingCanvas(getCurrMeme().selectedImgId);
   }, 70);
 
-  gTimeout = setTimeout(function() {
+  gTimeout = setTimeout(function () {
     clearInterval(gMarkInterval);
     gIsMarked = false;
     renderEditingCanvas(getCurrMeme().selectedImgId);

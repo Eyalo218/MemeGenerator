@@ -1,3 +1,13 @@
+/* fontFace */
+@font-face{
+    src:url('../fonts/Lato-Regular.ttf');
+    font-family:'lato';
+}
+/* @font-face{
+    src:url('../fonts/eurof-regular.ttf');
+    font-family:'eurof';
+} */
+
 *{
     box-sizing: border-box;
 }
@@ -5,7 +15,7 @@
 html{
      margin:0;
      height: 100%;
-     /* fonts */
+     font-family: 'lato';
 }
 
 body{
@@ -35,12 +45,6 @@ header button{
     color: rgb(168, 156, 156);
     font-size:1.4em;
     cursor:pointer;
-}
-
-img{
-    width: 100px;
-    height: 100px;
-    margin:0 10px;
 }
 
 img.portrait{
@@ -102,6 +106,18 @@ img.portrait{
 }
 
 .menu li:hover{
+    color: #2eb398;
+}
+
+.menu li a:link{
+    color: rgb(168, 156, 156);
+}
+
+.menu li a:visited{
+    color: rgb(168, 156, 156);
+}
+
+.menu li a:hover{
     color: #2eb398;
 }
 
