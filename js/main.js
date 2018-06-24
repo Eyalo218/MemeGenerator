@@ -13,6 +13,8 @@ function togglePages(photoId) {
   if (photoId !== undefined) {
     setCurrMeme(photoId);
     renderEditingCanvas(photoId);
+    document.querySelector(".text-insertion").focus();
+
   } else {
     document.querySelector(".text-insertion").value = "";
     clearMeme();
@@ -62,7 +64,6 @@ function renderText() {
 }
 
 function renderEditingCanvas(id) {
-  document.querySelector(".text-insertion").focus();
   var img = new Image();
   img.src = getImageById(id).url;
   var elCanvas = document.querySelector("#canvas");
@@ -137,6 +138,7 @@ function onButtonAdd() {
   addLine();
   document.querySelector(".text-insertion").value = "";
   renderEditingCanvas(currMeme.selectedImgId);
+  document.querySelector(".text-insertion").focus();
   return;
 }
 
