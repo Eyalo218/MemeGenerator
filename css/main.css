@@ -3,6 +3,7 @@
     src:url('../fonts/Lato-Regular.ttf');
     font-family:'lato';
 }
+
 /* @font-face{
     src:url('../fonts/eurof-regular.ttf');
     font-family:'eurof';
@@ -141,6 +142,7 @@ img.portrait{
     background-repeat: no-repeat;
     background-size:cover;
     background-position: 50% 50%;
+
 
 }
 

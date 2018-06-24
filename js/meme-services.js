@@ -41,7 +41,7 @@ var gMeme = {
     selectedLineIdx: 0,
     txts: [
         { lineIdx: 0, content: '', fontFamily: 'impact', fontSize: 35, posHor: 0.5,
-         posVert: 0.55, color: 'yellow', shadow: 'no', stroke: 'no'
+         posVert: 0.8, color: 'yellow', shadow: 'no', stroke: 'no'
          }
     ]
 }
@@ -142,7 +142,7 @@ function clearMeme() {
     gMeme.txts = [
         {
             lineIdx: 0, content: '', fontFamily: 'impact', fontSize: 35, posHor: 0.5,
-            posVert: 0.55, color: 'red', shadow: 'no', stroke: 'no'
+            posVert: 0.8, color: 'red', shadow: 'no', stroke: 'no'
         }
     ]
     gMeme.selectedLineIdx = 0;
@@ -154,7 +154,7 @@ function addLine() {
     var lineIdx = gMeme.txts.length;
     gMeme.txts.push(
         { lineIdx: lineIdx, content: '--New Line--', fontFamily: 'impact', fontSize: currFontSize, posHor: 0.5,
-         posVert: 0.55, color: currColor, shadow: 'no', stroke: 'no'
+         posVert: 0.8, color: currColor, shadow: 'no', stroke: 'no'
          }
     );
     gMeme.selectedLineIdx = lineIdx;
