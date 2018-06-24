@@ -40,19 +40,22 @@ var gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
     txts: [
-        { lineIdx: 0, content: '', fontFamily: 'impact', fontSize: 35, posHor: 0.5,
-         posVert: 0.55, color: 'yellow', shadow: 'no', stroke: 'no'
-         }
+        {
+            lineIdx: 0, content: '', fontFamily: 'impact', fontSize: 35, posHor: 0.5,
+            posVert: 0.55, color: 'yellow', shadow: 'no', stroke: 'no'
+        }
     ]
 }
 
-function setSearchKeyWordsForRendering(){
-    for (let key in object) {
-        if (object.hasOwnProperty(key)) {
-            const element = object[key];
-            
-        }
+function setSearchKeysForRendering() {
+    var htmlSTR = '<option value="all">'
+    var keywords = []
+    for (let key in gKeyWordsMap) {
+        if (keywords.indexOf(key) === -1)
+            keywords.push[key];
+        htmlSTR += `<option value="${key}">`
     }
+    return htmlSTR;
 }
 
 function setImagesForRendering() {
@@ -76,16 +79,19 @@ function getImageById(id) {
 
 function setImagesForSorting(sortBy) {
     var strHTML = '';
-    for (let i = 0; i < gImgs.length; i++) {
-        var currImg = gImgs[i];
-        for (let j = 0; j < currImg.keyWords.length; j++) {
-            if (currImg.keyWords[j].indexOf(sortBy) !== -1) {
-                strHTML += `<div id="${currImg.id}" data-src="${currImg.url}" onclick="togglePages(${currImg.id})" 
+    if (sortBy !== 'all') {
+        for (let i = 0; i < gImgs.length; i++) {
+            var currImg = gImgs[i];
+            for (let j = 0; j < currImg.keyWords.length; j++) {
+                if (currImg.keyWords[j].indexOf(sortBy) !== -1) {
+                    strHTML += `<div id="${currImg.id}" data-src="${currImg.url}" onclick="togglePages(${currImg.id})" 
                              style="background-image:url(${currImg.url})"''/></div>`
-                break;
+                    break;
+                }
             }
         }
     }
+    else strHTML = setImagesForRendering();
     return strHTML;
 }
 
@@ -115,16 +121,16 @@ function getPopularKeyWordlist() {
         }
         else {
             if (gKeyWordsMap[key] > gKeyWordsMap[keyWords[0].key])
-                keyWords[0]={ key: key, searchAmount: 0 }
-                keyWords.sort(function (a, b) {
-                    return gKeyWordsMap[a.key] > gKeyWordsMap[b.key];
-                }) 
+                keyWords[0] = { key: key, searchAmount: 0 }
+            keyWords.sort(function (a, b) {
+                return gKeyWordsMap[a.key] > gKeyWordsMap[b.key];
+            })
         }
     }
     return keyWords;
 }
 
-function setKeyWordsForRendering(keyWords){
+function setKeyWordsForRendering(keyWords) {
     var htmlSTR = '';
     for (let i = 0; i < keyWords.length; i++) {
         htmlSTR += `<li onclick="filterBy(this)" value=${keyWords[i].searchAmount}>${keyWords[i].key}</li>`;
@@ -153,9 +159,10 @@ function addLine() {
     var currFontSize = gMeme.txts[gMeme.selectedLineIdx].fontSize;
     var lineIdx = gMeme.txts.length;
     gMeme.txts.push(
-        { lineIdx: lineIdx, content: '--New Line--', fontFamily: 'impact', fontSize: currFontSize, posHor: 0.5,
-         posVert: 0.55, color: currColor, shadow: 'no', stroke: 'no'
-         }
+        {
+            lineIdx: lineIdx, content: '--New Line--', fontFamily: 'impact', fontSize: currFontSize, posHor: 0.5,
+            posVert: 0.55, color: currColor, shadow: 'no', stroke: 'no'
+        }
     );
     gMeme.selectedLineIdx = lineIdx;
 }

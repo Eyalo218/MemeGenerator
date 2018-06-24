@@ -179,17 +179,14 @@ img.portrait{
 }
 
 .back-to {
-    /* margin-bottom: 20px; */
     justify-content: space-between;
     height: 60px;
-    /* height: 80px; */
 }
 
 .back-text, .download-text {
     width: 90%;
     margin: 0;
     height: 60px;
-    /* line-height: 50px; */
     background-color: #2da;
     text-align: center;
     display: flex;
@@ -274,9 +271,6 @@ img.portrait{
 }
 
 .input-color:hover, button:hover {
-    /* filter: brightness(2.3); */
-    /* filter: drop-shadow(8px,4px); */
-    /* filter: hue-rotate(180deg); */
     filter: invert(80%);
 }
 
@@ -299,6 +293,3 @@ img.portrait{
     width: 25%;
 }
 
-.font-select option {
-    /* width: 25%; */
-}
