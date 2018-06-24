@@ -64,14 +64,33 @@
                 </ul>
             </div>
         </div>
-        <div class="contact" id="contact-me">
-
-
+        <div class="contact-me" id="contact-me">
+            <div class="contact-container flex">
+                <div class="form-header"></div>
+                <div class="form-gross flex">
+                    <div class="form flex">
+                        <form onsubmit="onContactSend(event)">
+                        <input type="text" class="name" placeholder="Name(Required)" required>
+                        <input type="email" class="email" placeholder="Email(Required)" required>
+                        <input type="text" class="subject" placeholder="Subject">
+                        <input type="text" class="message" placeholder="Write your message here...">
+                        <button type="submit" class="send">SEND</button>
+                        </form>
+                    </div>
+                    <div class="contact-data">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non accusantium ea, ad nostrum ab in a iste, voluptatibus modi ipsa temporibus quibusdam quisquam mollitia labore, delectus odio voluptatem quas aspernatur?</p>
+                        <ul>
+                            <li>Street</li>
+                            <li>Tel</li>
+                            <li>Info</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
     <editor class="editor hidden flex">
-
 
         <div class="back-to flex" onclick="togglePages()">
             <div class="arrow">

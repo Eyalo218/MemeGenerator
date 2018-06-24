@@ -355,3 +355,64 @@ button:hover {
 .font-select {
   width: 25%;
 }
+
+.contact-container {
+    color: white;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-me {
+    background-color: #333;
+}
+
+.form-header {
+    width: 100%;
+    height: 80px;
+}
+
+.form-gross {
+    justify-content: space-between;
+    width: 60%;
+    padding-bottom: 20px;
+}
+
+.form-gross .form {
+    flex-direction: column;
+    height: 300px;
+    width: 300px;
+    justify-content: space-between;
+    /* background-color: #222; */
+}
+
+.form-gross input {
+    background-color: #666;
+    color: white;
+    height: 3em;
+}
+
+::placeholder {
+    color: white;
+}
+
+.contact-data {
+    margin: 0;
+    width: 40%;
+    height: 100%;
+}
+
+p {
+    margin: 0;
+}
+
+.contact-me .message {
+    height: 80px;
+}
+
+ul {
+    list-style: none;
+}
+
+.send-container {
+    justify-content: flex-end;
+}

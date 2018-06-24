@@ -276,3 +276,13 @@ function onFontSelection(el) {
   currMeme.txts[currMeme.selectedLineIdx].fontFamily = fonts[idx];
   renderEditingCanvas(currMeme.selectedImgId);
 }
+
+function onContactSend() {
+  var name = document.querySelector(".contact-me .name").value;
+  var email = document.querySelector(".contact-me .email").value;
+  var subject = document.querySelector(".contact-me .subject").value;
+  var message = document.querySelector(".contact-me .message").value;
+  window.open(
+    `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${message}`
+  );
+}
