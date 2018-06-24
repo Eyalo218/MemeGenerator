@@ -100,8 +100,8 @@ header {
 }
 img.portrait {
   align-self: center;
-  width: 100px;
-  height: 100px;
+  height: 90%;
+  max-height: 150px;
   clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
 }
 
@@ -122,11 +122,6 @@ header button {
 .fonts {
   width: 100%;
   height: 100%;
-}
-img.portrait {
-  align-self: center;
-  width: 100px;
-  height: 100px;
 }
 
 /* helpers  */
@@ -241,7 +236,14 @@ img.portrait {
   justify-content: center;
   align-items: center;
   background-color: aquamarine;
-  height: 350px; /*temp need to make it pixel perfect*/
+  min-height: 200px; /*temp need to make it pixel perfect*/
+  padding-right: 10%;
+  padding-left: 10%;
+  min-width: 280px;
+}
+
+.about-text {
+  max-width: 400px;
 }
 
 .contact {
@@ -384,14 +386,14 @@ button:hover {
 
 .form-gross {
   justify-content: space-between;
-  width: 60%;
+  max-width: 440px;
   padding-bottom: 20px;
 }
 
 .form-gross .form {
   flex-direction: column;
   height: 300px;
-  width: 300px;
+  width: 200px;
   justify-content: space-between;
 }
 
@@ -425,6 +427,7 @@ ul {
 
 .send-container {
   justify-content: flex-end;
+  display: block;
 }
 
 .backto-canvascontainer {
@@ -455,4 +458,14 @@ ul {
   .backto-canvascontainer {
 min-width: 580px;
   }
+}
+
+.contact-data ul {
+  padding: 0;
+}
+
+.contact-data img {
+  height: 12px;
+  padding-top: 2px;
+  padding-right: 5px;
 }
